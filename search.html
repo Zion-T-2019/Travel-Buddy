@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Travel Assisant</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: linear-gradient(to bottom right, #33475b, #0033CC, #FF77CC, rgb(255, 122, 89));
+    }
+
+    .title{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Trebuchet MS, sans-serif;
+        font-size: 70px;
+        margin-bottom: 50px;
+    }
+
+    .search-container {
+        text-align: center;
+
+    }
+
+    .search-input {
+        padding: 10px;
+        width: 300px;
+        border-radius: 5px;
+        font-size: 20px;
+    }
+
+    .search-button {
+        padding: 10px;
+        width: 100px;
+        border-radius: 5px;
+        font-size: 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="title">Travel Buddy</div>
+    <div class="search-container">
+        <form action="search.php" method="post">
+            <input class="search-input" type="text" name="search" placeholder="Enter a Location...">
+            <button class="search-button" type="submit" name="submit-search">Search</button>
+        </form>
+    </div>
+    <div class=" = "clock">
+        <p id="date"></p>
+        <p id="time"></p>
+    </div>
+</body>
+    
+    
+   
+
+
+</html>
