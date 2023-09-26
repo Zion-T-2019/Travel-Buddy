@@ -1,0 +1,170 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400');
+
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Poppins', sans-serif;
+ }
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom right, #33475b, #0033CC, #FF77CC, rgb(255, 122, 89));
+}
+
+.wrapper {
+    width: 500px;
+    background: #fff;
+    border-radius: 7px;
+}
+
+.wrapper header {
+        color: #0033CC; 
+        font-size: 50px;
+        font-weight: 500;
+        padding: 16px 15px;
+        display: flex;
+        align-items: center;
+        
+}
+
+header img{
+    cursor: pointer;
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+
+
+.wrapper .search-container {
+    display:none;
+    text-align: center;
+    margin: 20px 25px 30px;
+}
+
+.search-container .info{
+    display: none;
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding: 12px 10px;
+    border-radius: 7px;
+}
+
+.info.error {
+    display: block;
+    color: #721c24;
+    background: #f5c6cb;
+    border: 1px solid #f5c6cb;
+}
+
+.info.pending{
+    display: block;
+    color: #0c5460;
+    background: #d1ecf1;
+    border: 1px solid #bee5eb;
+}
+
+
+
+.search-container :where(input, button) {
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    transition: all 0.3s ease;
+}
+
+.search-container input {
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+.search-container input:is(focus, :valid) {
+    border: 2px solid #0033CC;
+}
+
+.search-container .separator {
+    height: 1px;
+    width: 100%;
+    background: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0;
+}
+
+.separator::before{
+    content: 'or';
+    color: #ccc;
+    font-size: 20px;
+    padding: 0,15px;
+    background: #fff;
+}
+
+.search-container button {
+    margin-top: 10px;
+    background: #0033CC;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+.search-input {
+    padding: 10px;
+    width: 300px;
+    border-radius: 50px;
+    font-size: 20px;
+}
+
+.search-button {
+    padding: 17px;
+    width: 100px;
+    border-radius: 50px;
+    font-size: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+    .search-button:hover {
+        background-color: #45a049;
+    }
+
+    .search-button:active {
+        background-color: #3e8e41;
+    }
+
+.gg-search {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 16px;
+    height: 16px;
+    border: 2px solid;
+    border-radius: 100%;
+    margin-left: -4px;
+    margin-top: -4px
+}
+
+    .gg-search::after {
+        content: "";
+        display: block;
+        box-sizing: border-box;
+        position: absolute;
+        border-radius: 3px;
+        width: 2px;
+        height: 8px;
+        background: currentColor;
+        transform: rotate(-45deg);
+        top: 10px;
+        left: 12px
+    }
+
