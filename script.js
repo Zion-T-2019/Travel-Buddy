@@ -83,8 +83,29 @@ function weatherDetails(info) {
         infoTxt.classList.remove("pending", "error");
         wrapper.classList.add("active");
         console.log(info);
+        let packingList = populateList({ temp: info.main.temp, description: info.weather[0].description });
+        console.log(packingList);
     }
     
+}
+
+function populateList(weatherData) {
+    let packingList = [];
+
+    // example conditions 
+    if (weatherData.temp <= 10) { // cold
+        packingList.push("coat", "gloves", "scarf");
+    } else if (weatherData.temp > 10 && weatherData.temp <= 20) { // mild
+        packingList.push("jacket", "long-sleeve shirts");
+    } else if (weatherData.temp > 20) { // warm
+        packingList.push("t-shirts", "shorts", "sunscreen");
+    }
+    if (weatherData.description.includes("rain")) {
+        packingList.push("umbrella", "waterproof jacket");
+    } else if (weatherData.description.includes("snow")) {
+        packingList.push("warm hat", "snow boots");
+    }
+    return packingList:
 }
 
 arrowBck.addEventListener("click", () => { // removing active class from wrapper and clearing input field
