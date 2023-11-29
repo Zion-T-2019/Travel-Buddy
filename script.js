@@ -105,7 +105,7 @@ function populateList(weatherData) {
     } else if (weatherData.description.includes("snow")) {
         packingList.push("warm hat", "snow boots");
     }
-    return packingList;
+    return packingList:
 }
 
 arrowBck.addEventListener("click", () => { // removing active class from wrapper and clearing input field
