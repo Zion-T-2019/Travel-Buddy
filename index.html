@@ -15,7 +15,7 @@
         <header>
             <i class="bx bx-left-arrow-alt"></i>Travel Buddy
             <img width="60" height="60" src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-vitaly-gorbachev/60/external-plane-online-shopping-vitaliy-gorbachev-lineal-vitaly-gorbachev.png" alt="travel logo" />
-
+            <icon class="bx bx-paper-plane"></icon>
         </header>
         <section class="search-container">
             <p class="info"></p>
@@ -33,7 +33,7 @@
 
             <div class="temp">
                 <span class="num">_</span>
-                <span class="deg">°</span>C
+                <span class="deg">°</span><span id="temperatureUnit">C</span>
             </div>
             <div class="weather">_ _</div>
             <div class="location">
@@ -46,7 +46,7 @@
                     <div class="details">
                         <div class="temp">
                             <span class="num-2">_</span>
-                            <span class="deg-2">°</span>C
+                            <span class="deg-2">°</span><span id="temperatureUnit">C</span>
                         </div>
                         <p>Feels Like</p>
                     </div>
@@ -59,18 +59,15 @@
                     </div>
                 </div>
             </div>
-    </div>
-    <div class="wrapper.recommend">
-        <div class="main-container">
-            <span class="packing-recommendations">Packing Recommendations:</span>
-            <div class="packing-recommendation">
-                <span class="before-traveling-to-dallas">Before traveling to dallas pack the following:</span><span class="recommendations">coat<br />umbrella<br />shorts<br />etc</span>
-            </div>
-            <span class="day-weather-forecast">7- Day Weather Forecast</span><span class="home">Home</span>
-            <div class="weather-forecast"></div>
+        </section>
+        <div class="switch-container">
+            <label class="switch">
+                <input type="checkbox" id="tempSwitch">
+                <span class="slider"></span>
+            </label>
         </div>
-
     </div>
+ 
 
         <script src="script.js"></script>
    

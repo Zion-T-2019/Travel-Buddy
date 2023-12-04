@@ -42,9 +42,19 @@ header .img{
 header i{
     cursor: pointer;
     font-size: 0px;
-    margin-right: 8px;
+    
+}
+header icon{
+    cursor: pointer;
+    font-size: 0px;
+    
+   
 }
 
+.wrapper.active header icon{
+    font-size: 30px;
+    margin-left: 130px;
+}
 .wrapper.active header img{
     display:none
 }
@@ -240,115 +250,70 @@ weather-part .location{
     margin-top:-6px;
 }
 
-.main-container {
-    overflow: hidden;
-    display: none;
+.wrapper.active .switch-container {
+    display: flex;
 }
 
-    .main-container,
-    .main-container * {
-        box-sizing: border-box;
+.switch-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/* The switch - the box around the slider */
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+}
+
+    /* Hide default HTML checkbox */
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
     }
 
-.main-container {
-    position: relative;
-    width: 1440px;
-    height: 1024px;
-    margin: 0 auto;
-    font-size: 0px;
-    background: rgb(0, 56, 255);
-    overflow: hidden;
-}
-
-.packing-recommendations {
-    display: inline-block;
-    position: relative;
-    height: 67px;
-    margin: 419px 0 0 155px;
-    font-family: Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei", "Source Han Sans CN", sans-serif;
-    color: rgb(0, 0, 0);
-    font-size: 37px;
-    font-weight: 600;
-    line-height: 55.5px;
-    text-align: left;
-    z-index: 2;
-}
-
-.packing-recommendation {
-    position: relative;
-    width: 1138px;
-    height: 488px;
-    margin: 0 0 0 155px;
-    font-size: 0px;
-    background: rgb(255, 255, 255);
-    z-index: 3;
-    overflow: visible auto;
-}
-
-.before-traveling-to-dallas {
-    display: inline-block;
-    position: relative;
-    height: 41px;
-    margin: 26px 0 0 10px;
-    font-family: Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei", "Source Han Sans CN", sans-serif;
-    color: rgb(0, 0, 0);
-    font-size: 25px;
-    font-weight: 600;
-    line-height: 37.5px;
-    text-align: left;
-    z-index: 4;
-}
-
-.recommendations {
-    display: inline-block;
-    position: relative;
-    width: 1037px;
-    height: 339px;
-    margin: 35px 0 0 58px;
-    font-family: Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei", "Source Han Sans CN", sans-serif;
-    color: rgb(0, 0, 0);
-    font-size: 25px;
-    font-weight: 600;
-    line-height: 37.5px;
-    text-align: left;
-    z-index: 6;
-}
-
-.day-weather-forecast {
+/* The slider */
+.slider {
     position: absolute;
-    width: 639px;
-    height: 131px;
-    top: 108px;
-    left: 240px;
-    font-family: Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei", "Source Han Sans CN", sans-serif;
-    color: rgb(0, 0, 0);
-    font-size: 37px;
-    font-weight: 600;
-    line-height: 55.5px;
-    text-align: left;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    border: 1px solid #adb5bd;
+    transition: .4s;
+    border-radius: 30px;
 }
 
-.home {
-    position: absolute;
-    width: 81px;
-    height: 46px;
-    top: 126px;
-    left: 155px;
-    font-family: Poppins, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei", "Source Han Sans CN", sans-serif;
-    color: rgb(0, 0, 0);
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 30px;
-    text-align: left;
-    z-index: 5;
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 1.4em;
+        width: 1.4em;
+        border-radius: 20px;
+        left: 0.27em;
+        bottom: 0.25em;
+        background-color: #adb5bd;
+        transition: .4s;
+    }
+
+input:checked + .slider {
+    background-color: #007bff;
+    border: 1px solid #007bff;
 }
 
-.weather-forecast {
-    position: absolute;
-    width: 1146px;
-    height: 194px;
-    top: 173px;
-    left: 147px;
-    background: rgb(255, 255, 255);
-    z-index: 1;
+input:focus + .slider {
+    box-shadow: 0 0 1px #007bff;
 }
+
+input:checked + .slider:before {
+    transform: translateX(1.4em);
+    background-color: #fff;
+}
+

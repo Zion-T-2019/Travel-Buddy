@@ -5,10 +5,14 @@ inputField = inputPart.querySelector("input");
 locationBtn = inputPart.querySelector("button");
 wIcon = document.querySelector(".weather-part img");
 arrowBck = wrapper.querySelector("header i");
+nxtPage = wrapper.querySelector("header icon");
+
+
+const forecast = document.querySelector(".forecast");
+//homwBtn = forecast.querySelector("header i");
 
 let api;
-
-inputField.addEventListener("keyup", e => { // if user press any key and release then this function will run
+  
     if(e.key == "Enter" && inputField.value != ""){
         requestApi(inputField.value);  
     }
@@ -21,6 +25,28 @@ locationBtn.addEventListener("click", () => { // if user click on the location i
         alert("Your browser not support geolocation api");
     }
 });
+//document.getElementById('tempSwitch').addEventListener('change', function (e) {
+  //  convertTemperature(e.target.checked);
+//});
+
+/*function convertTemperature(isFahrenheit) {
+    let currentTemp = parseFloat(wrapper.querySelector(".temp .num").innerText);
+    let feelsLikeTemp = parseFloat(wrapper.querySelector(".temp .num-2").innerText);
+
+    if (isFahrenheit) {
+        // Convert Celsius to Fahrenheit
+        currentTemp = (currentTemp * 9 / 5) + 32;
+        feelsLikeTemp = (feelsLikeTemp * 9 / 5) + 32;
+    } else {
+        // Convert Fahrenheit to Celsius
+        currentTemp = (currentTemp - 32) * 5 / 9;
+        feelsLikeTemp = (feelsLikeTemp - 32) * 5 / 9;
+    }
+
+    // Update the UI
+    wrapper.querySelector(".temp .num").innerText = Math.floor(currentTemp);
+    wrapper.querySelector(".temp .num-2").innerText = Math.floor(feelsLikeTemp);
+}*/
 
 function onSuccess(position){ // if user allowed location access then this block will execute
     const { latitude, longitude } = position.coords;
@@ -32,7 +58,7 @@ function onError(error){ // if user denied location access then this block will 
     infoTxt.classList.add("error");
 }
 
-const OPEN_WEATHER_API_KEY = "";
+const OPEN_WEATHER_API_KEY = ""
 function requestApi(city) { // requesting api
     api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${OPEN_WEATHER_API_KEY}`;
     fetchWeather();
@@ -80,6 +106,9 @@ function weatherDetails(info) {
         wrapper.querySelector(".temp .num-2").innerText = Math.floor(feels_like);
         wrapper.querySelector(".humidity span").innerText = `${humidity}%`;
 
+       //const isFahrenheit = document.getElementById('tempSwitch').checked;
+       //convertTemperature(isFahrenheit);
+
         infoTxt.classList.remove("pending", "error");
         wrapper.classList.add("active");
         console.log(info);
@@ -88,6 +117,22 @@ function weatherDetails(info) {
     }
     
 }
+
+
+
+
+arrowBck.addEventListener("click", () => { // removing active class from wrapper and clearing input field
+    wrapper.classList.remove("active");
+    inputField.value = "";
+    infoTxt.innerText = "";
+    infoTxt.classList.remove("pending", "error");
+});
+
+nxtPage.addEventListener("click", () => { // goes to next page
+    console.log("clicked");
+    window.location.href = "pack.html";
+
+});
 
 function populateList(weatherData) {
     let packingList = [];
@@ -105,12 +150,7 @@ function populateList(weatherData) {
     } else if (weatherData.description.includes("snow")) {
         packingList.push("warm hat", "snow boots");
     }
-    return packingList:
+    return packingList;
 }
 
-arrowBck.addEventListener("click", () => { // removing active class from wrapper and clearing input field
-    wrapper.classList.remove("active");
-    inputField.value = "";
-    infoTxt.innerText = "";
-    infoTxt.classList.remove("pending", "error");
-});
+
