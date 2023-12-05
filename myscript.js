@@ -84,7 +84,7 @@ function updatePackingList(cityName, packing) {
                   <ul id="list">
                    <li>${packing[0]}</li>
                    <li>${packing[1]}</li>
-                   <li>${packing[3]}</li>
+                   <li>${packing[2]}</li>
                 </ul>`
    
 }
