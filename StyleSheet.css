@@ -92,7 +92,7 @@ weather-forcast .separator {
     font-size: 20px;
     margin: 10px 0;
 }
-.packing-recommendation .list {
+.packing-recommendation #list {
    
     flex-wrap: wrap;
     gap: 20px;

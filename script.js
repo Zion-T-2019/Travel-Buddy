@@ -109,10 +109,15 @@ function weatherDetails(info) {
         wrapper.querySelector(".location span").innerText = `${city}, ${country}`;
         wrapper.querySelector(".temp .num-2").innerText = Math.floor(feels_like);
         wrapper.querySelector(".humidity span").innerText = `${humidity}%`;
+
+        // Adding data to local storage
         localStorage.setItem("lat", lat);
         localStorage.setItem("lon", lon);
+        localStorage.setItem("city", city);
        //const isFahrenheit = document.getElementById('tempSwitch').checked;
        //convertTemperature(isFahrenheit);
+
+       
 
         infoTxt.classList.remove("pending", "error");
         wrapper.classList.add("active");
@@ -144,6 +149,7 @@ nxtPage.addEventListener("click", () => { // goes to next page
 
 });
 
+// Packing List
 function populateList(weatherData) {
     let packingList = [];
 

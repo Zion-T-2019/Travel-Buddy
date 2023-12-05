@@ -1,9 +1,11 @@
 const forecast = document.querySelector('.forecast');
 homebtn = forecast.querySelector('#home');
 cardDiv = forecast.querySelector('.forecast-cards');
+list = forecast.querySelector('.packing-recommendation');
 
 const lat = localStorage.getItem('lat');
 const lon = localStorage.getItem('lon');
+const city = localStorage.getItem('city');
 
 const API_KEY = localStorage.getItem('API_Key');
 
@@ -71,8 +73,25 @@ if (weatherId >= 200 && weatherId <= 232) {
     }
 
 }
-getForecastData();
 
+function updatePackingList(cityName, packing) {
+    list.innerHTML = '';
+
+    return ` <div class="packing-recommendation">
+            <h2>Packing Recommendations:</h2>
+
+            <h3>Before traveling to ${cityName} pack the following:</h3>
+                  <ul id="list">
+                   <li>${packing[0]}</li>
+                   <li>${packing[1]}</li>
+                   <li>${packing[3]}</li>
+                </ul>`
+   
+}
+
+
+getForecastData();
+list.insertAdjacentHTML('beforeend', updatePackingList(city, packingList));
 
 
 homebtn.addEventListener('click', () => {
