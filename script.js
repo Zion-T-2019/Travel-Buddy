@@ -60,7 +60,7 @@ function onError(error){ // if user denied location access then this block will 
     infoTxt.classList.add("error");
 }
 
-const OPEN_WEATHER_API_KEY = "f29e4ab8958e1df49a95314c4d8a990a"; // You can get yours by singing up to openweathermap.org
+const OPEN_WEATHER_API_KEY = "Your API key"; // You can get yours by singing up to openweathermap.org
 
 function requestApi(city) { // requesting api
     api = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${OPEN_WEATHER_API_KEY}`;
