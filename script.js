@@ -27,11 +27,11 @@ locationBtn.addEventListener("click", () => { // if user click on the location i
     } 
 });
 
-//document.getElementById('tempSwitch').addEventListener('change', function (e) {
-  //  convertTemperature(e.target.checked);
-//});
+document.getElementById('tempSwitch').addEventListener('change', function (e) {
+    convertTemperature(e.target.checked);
+});
 
-/*function convertTemperature(isFahrenheit) {
+function convertTemperature(isFahrenheit) {
     let currentTemp = parseFloat(wrapper.querySelector(".temp .num").innerText);
     let feelsLikeTemp = parseFloat(wrapper.querySelector(".temp .num-2").innerText);
 
@@ -48,7 +48,7 @@ locationBtn.addEventListener("click", () => { // if user click on the location i
     // Update the UI
     wrapper.querySelector(".temp .num").innerText = Math.floor(currentTemp);
     wrapper.querySelector(".temp .num-2").innerText = Math.floor(feelsLikeTemp);
-}*/
+}
 
 function onSuccess(position){ // if user allowed location access then this block will execute
     const { latitude, longitude } = position.coords;
@@ -114,8 +114,8 @@ function weatherDetails(info) {
         localStorage.setItem("lat", lat);
         localStorage.setItem("lon", lon);
         localStorage.setItem("city", city);
-       //const isFahrenheit = document.getElementById('tempSwitch').checked;
-       //convertTemperature(isFahrenheit);
+       const isFahrenheit = document.getElementById('tempSwitch').checked;
+       convertTemperature(isFahrenheit);
 
        
 
